@@ -1,60 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
-</head>
-<body>
-    
-    <h1>This is Lucky Sharma's Portfolio </h1>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lucky Sharma — portfolio, experience, skills, and contact." />
+    <title>Lucky Sharma — Portfolio</title>
 
-    <img src="./assets/images/lucky.jpg" height="200" alt="Lucky's image" />
-<hr/>
-<h2><a href="./public/contact.html">Contact Details</a></h2>
-<hr/>
-<h3>Objective: -</h3>
-<p>
-    An enthusiatic and growth minded, looking forward to make a successful startup that not only creates a wealth but also helping nation to become fully independent on the foreign brands, and also initiating the idea"Made in India" of Prime Minister Modi.
-</p>
-<hr/>
-<h3>Education: -</h3>
-<ul>
-    <li>BE in Information Texhnology (2026)</li>
-</ul>
-<hr/>
-<h3>Work Experience: -</h3>
-<ol>
-    <li><h4>GT Academy </h4>
-    <p> [Jan 2025-till date]</p>
-        <ul>
-            <li>Working as a technical head and managing the key roles.</li>
-        </ul>
-    </li>
-    <li><h4>DiGi Sign friends</h4>
-        <ul>
-        <li> Worked as a technical assistant, engaged many clients and learned key aspects of Ms-office</li>
-        </ul>
-    </li>
-</ol>
-<hr/>
-<h3>skills: -</h3>
-<ol>
-    <li>Technical Skills
-        <ul>
-            <li>Html, Excel, Power BI </li>
-        </ul>
-    </li>
-    <li>Soft Skills
-        <ul>
-            <li>Good Communicator, Leader</li>
-        </ul>
-    </li>
-</ol>
+    <!-- Security: reasonable CSP for static + Supabase -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="no-referrer" />
 
-<footer>
-    Luckysharma © All rights reserved.
-    
-</footer>
-</body>
+    <!-- Fonts & Tailwind CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --brand: #4f46e5; }
+      html { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+      <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2 font-semibold tracking-tight">
+          <span class="inline-block w-2.5 h-6 rounded-full" style="background: var(--brand);"></span>
+          Lucky Sharma
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#about" class="hover:text-indigo-600">About</a>
+          <a href="#experience" class="hover:text-indigo-600">Experience</a>
+          <a href="#skills" class="hover:text-indigo-600">Skills</a>
+          <a href="/public/contact.html" class="hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" aria-label="Toggle theme" class="rounded-md p-2 hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm9-5a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM6 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Zm12.364 6.364a1 1 0 0 1-1.414 0l-1.415-1.414a1 1 0 1 1 1.415-1.415l1.414 1.415a1 1 0 0 1 0 1.414ZM7.465 7.465a1 1 0 0 1-1.414 0L4.636 6.05A1 1 0 1 1 6.05 4.636l1.415 1.414a1 1 0 0 1 0 1.415Zm9.9-2.829a1 1 0 0 1 1.414 0l1.415 1.414a1 1 0 0 1-1.415 1.415l-1.414-1.415a1 1 0 0 1 0-1.414ZM4.636 17.95a1 1 0 0 1 1.414 0l1.415 1.414A1 1 0 0 1 6.05 21.78l-1.415-1.414a1 1 0 0 1 0-1.415Z"/></svg>
+          </button>
+          <button id="signInBtn" class="rounded-md bg-indigo-600 text-white px-3 py-2 text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign in</button>
+          <div id="accountMenu" class="hidden items-center gap-2">
+            <span id="userEmail" class="text-sm text-gray-600"></span>
+            <button id="signOutBtn" class="rounded-md border px-3 py-2 text-sm hover:bg-gray-50">Sign out</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!-- Hero -->
+      <section class="py-16 sm:py-24 flex flex-col-reverse lg:flex-row items-center gap-10">
+        <div class="flex-1">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">Hi, I'm Lucky Sharma</h1>
+          <p class="mt-4 text-lg text-gray-600">Aspiring founder focused on building Made-in-India products with impact.</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="/public/contact.html" class="inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700">Get in touch</a>
+            <a href="#experience" class="inline-flex items-center rounded-md border px-4 py-2 font-medium hover:bg-gray-50">View experience</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img src="./assets/images/lucky.jpg" alt="Lucky's portrait" class="w-56 h-56 object-cover rounded-2xl shadow-lg ring-1 ring-black/5" />
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-12 border-t border-gray-200">
+        <h2 class="text-2xl font-semibold">About</h2>
+        <p class="mt-3 text-gray-700">An enthusiastic, growth‑minded builder aiming to launch a successful startup that creates value and supports India's independence from foreign brands—aligning with the "Made in India" vision.</p>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="py-12 border-t border-gray-200">
+        <h2 class="text-2xl font-semibold">Experience</h2>
+        <div class="mt-6 grid sm:grid-cols-2 gap-6">
+          <article class="rounded-xl border p-5 hover:shadow-sm transition">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">GT Academy</h3>
+              <span class="text-xs text-gray-500">Jan 2025 — Present</span>
+            </div>
+            <ul class="mt-3 list-disc list-inside text-gray-700">
+              <li>Technical head, leading key initiatives and operations.</li>
+            </ul>
+          </article>
+          <article class="rounded-xl border p-5 hover:shadow-sm transition">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">DiGi Sign Friends</h3>
+            </div>
+            <ul class="mt-3 list-disc list-inside text-gray-700">
+              <li>Technical assistant; engaged clients and developed MS Office expertise.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-12 border-t border-gray-200">
+        <h2 class="text-2xl font-semibold">Skills</h2>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-sm">HTML</span>
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-sm">Excel</span>
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-sm">Power BI</span>
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-sm">Communication</span>
+          <span class="inline-flex items-center rounded-full border px-3 py-1 text-sm">Leadership</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-16 border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p>© <span id="year"></span> Lucky Sharma. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-indigo-600" href="/public/contact.html">Contact</a>
+          <a class="hover:text-indigo-600" href="#home">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Auth modal -->
+    <div id="authModal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/40 p-4">
+      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+        <div class="flex items-start justify-between">
+          <h3 class="text-lg font-semibold">Sign in</h3>
+          <button id="authModalClose" class="p-1 rounded-md hover:bg-gray-100" aria-label="Close">✕</button>
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Use a magic link or Google to continue.</p>
+        <form id="magicLinkForm" class="mt-4 space-y-3" autocomplete="email">
+          <label class="block">
+            <span class="text-sm">Email</span>
+            <input id="magicEmail" type="email" required placeholder="you@example.com" class="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </label>
+          <button type="submit" class="w-full rounded-md bg-indigo-600 text-white px-4 py-2 font-medium hover:bg-indigo-700">Send magic link</button>
+        </form>
+        <div class="mt-4">
+          <button id="googleSignIn" class="w-full rounded-md border px-4 py-2 font-medium hover:bg-gray-50">Continue with Google</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- App scripts -->
+    <script src="/public/env.js" defer></script>
+    <script type="module" src="/public/app.js"></script>
+  </body>
 </html>
